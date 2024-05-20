@@ -1,0 +1,150 @@
+Info: Processing symbol 'L4:Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder'.
+Info: Processing symbol 'R5:Resistor_SMD:R_0603_1608Metric'.
+Info: Processing symbol 'R4:Resistor_SMD:R_0603_1608Metric'.
+Info: Processing symbol 'R3:Resistor_SMD:R_0603_1608Metric'.
+Info: Processing symbol 'R2:Resistor_SMD:R_0603_1608Metric'.
+Info: Processing symbol 'R1:Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder'.
+Info: Processing symbol 'L11:Inductor_SMD:L_TDK_SLF6025'.
+Info: Processing symbol 'L10:Inductor_SMD:L_Vishay_IHLP-1212'.
+Info: Processing symbol 'L9:custom:HPI0530'.
+Info: Processing symbol 'L7:Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder'.
+Info: Processing symbol 'L6:Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder'.
+Info: Processing symbol 'L5:Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder'.
+Info: Processing symbol 'R6:Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder'.
+Info: Processing symbol 'L3:Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder'.
+Info: Processing symbol 'L2:Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder'.
+Info: Processing symbol 'L1:Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder'.
+Info: Processing symbol 'J5:Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical'.
+Info: Processing symbol 'J4:Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical'.
+Info: Processing symbol 'J3:Connector_USB:USB_Micro-B_Molex-105017-0001'.
+Info: Processing symbol 'J2:Connector_PinHeader_1.27mm:PinHeader_1x03_P1.27mm_Vertical'.
+Info: Processing symbol 'J1:Connector_Coaxial:SMA_Amphenol_901-143_Horizontal'.
+Info: Processing symbol 'D5:Diode_SMD:D_SMA_Handsoldering'.
+Info: Processing symbol 'D4:Diode_SMD:D_SMA_Handsoldering'.
+Info: Processing symbol 'D3:Package_TO_SOT_SMD:SOT-143'.
+Info: Processing symbol 'R_MPPT2:Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder'.
+Info: Processing symbol 'Y3:custom:NX2016SA-32M-EXS00A-CS06465'.
+Info: Processing symbol 'Y1:custom:QT3CD-32.768KEZY-T'.
+Info: Processing symbol 'U6:Package_QFP:LQFP-48_7x7mm_P0.5mm'.
+Info: Processing symbol 'U5:custom:SHT20'.
+Info: Processing symbol 'U4:custom:LTC4121EUD#PBF'.
+Info: Processing symbol 'U3:Package_SON:Texas_DRC0010J_ThermalVias'.
+Info: Processing symbol 'U2:Package_SON:Texas_DRC0010J_ThermalVias'.
+Info: Processing symbol 'U1:custom:SX1262'.
+Info: Processing symbol 'SW4:Button_Switch_SMD:SW_SPST_EVQQ2'.
+Info: Processing symbol 'SW3:Button_Switch_SMD:SW_SPDT_PCM12'.
+Info: Processing symbol 'SW2:Button_Switch_SMD:SW_SPST_EVQQ2'.
+Info: Processing symbol 'R9:Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder'.
+Info: Processing symbol 'R_MPPT1:Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder'.
+Info: Processing symbol 'R_FB3:Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder'.
+Info: Processing symbol 'R_FB2:Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder'.
+Info: Processing symbol 'R_FB1:Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder'.
+Info: Processing symbol 'R12:Resistor_SMD:R_0603_1608Metric'.
+Info: Processing symbol 'R11:Resistor_SMD:R_0603_1608Metric'.
+Info: Processing symbol 'R10:Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder'.
+Info: Processing symbol 'BT1:custom:BHC-18650-1P'.
+Info: Processing symbol 'R8:Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder'.
+Info: Processing symbol 'R7:Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder'.
+Info: Processing symbol 'C11:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C22:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C21:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C20:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C19:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C18:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C17:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C16:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C15:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C14:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C13:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C12:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'D1:Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal'.
+Info: Processing symbol 'C10:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C9:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C8:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C7:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C6:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C5:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C4:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C3:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C2:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C1:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C24:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'D2:Diode_SMD:D_SMB_Handsoldering'.
+Info: Processing symbol 'C43:'.
+Info: Processing symbol 'C42:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C41:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C40:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C39:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C38:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C37:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C36:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C35:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C33:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C23:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C25:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C26:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C27:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C28:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C29:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C34:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C32:Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder'.
+Info: Processing symbol 'C31:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Info: Processing symbol 'C30:Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder'.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U3 pin 11.
+Warning: No net found for symbol U3 pin 11.
+Warning: No net found for symbol U3 pin 11.
+Warning: No net found for symbol U3 pin 11.
+Warning: No net found for symbol U3 pin 11.
+Warning: No net found for symbol U4 pin 12.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U4 pin 17.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Warning: No net found for symbol U1 pin 25.
+Error: Cannot add C43 (no footprint assigned).
+
+
+Info: Total warnings: 54, errors: 1.
