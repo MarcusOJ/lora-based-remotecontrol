@@ -1,0 +1,394 @@
+<html>
+
+<head>
+    <!-- Prod -->
+    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='chart.js') }}"></script>
+
+    <!-- Dev -->
+    <!-- <link rel="stylesheet" href="styles.css">
+    <script src="./chart.js"></script> -->
+
+    <script type="text/javascript">
+        const dev = "http://localhost:3000/api/"
+        const prod = "http://192.168.50.248:5000/"
+        const HOST = prod
+
+
+        const today = new Date();
+        const todayTimestamp = Math.floor(today.getTime() / 1000);
+
+        const twentyFourHoursAgo = new Date(todayTimestamp - (24 * 60 * 60));
+        const twentyFourHoursAgoTimestamp = Math.floor(twentyFourHoursAgo.getTime() / 1000);
+
+        const oneWeekAgo = new Date(todayTimestamp - (7 * 24 * 60 * 60));
+        const oneWeekAgoTimestamp = Math.floor(oneWeekAgo.getTime() / 1000);
+
+        const thirtyDaysAgo = new Date(todayTimestamp - (30 * 24 * 60 * 60));
+        const thirtyDaysAgoTimestamp = Math.floor(thirtyDaysAgo.getTime() / 1000);
+
+        let activeDevice = null;
+
+
+        const getData = async (startTime, endTime) => {
+            const requestOptions = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify({ startTime, endTime }), // Shorthand syntax
+            };
+
+            try {
+                const response = await fetch(HOST + "data", requestOptions);
+                if (!response.ok) { // Check if response was ok (status in the range 200-299)
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const json = await response.json();
+                return json;
+
+            } catch (error) {
+                console.error('Error fetching data: ', error);
+            }
+        };
+
+
+        const getCurrentData = async () => {
+            const requestOptions = {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+            };
+
+            try {
+                const response = await fetch(HOST + "get_current_data", requestOptions);
+                if (!response.ok) { // Check if response was ok (status in the range 200-299)
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const json = await response.json();
+                console.log(json)
+		return json;
+
+            } catch (error) {
+                console.error('Error fetching data: ', error);
+            }
+        }
+
+        const convertUnixTimestamp = (timestamp) => {
+            const date = new Date(timestamp * 1000);
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            return `${hours}:${minutes}`;
+        };
+
+
+        const renderChart = (data, id) => {
+            const filteredData = data.filter(item => item.id === id)
+
+
+            var airTemperatureChart = new CanvasJS.Chart("airTemperatureChart", {
+                title: {
+                    text: "Air Temperature"
+                },
+                data: [
+
+                    {
+                        type: "line",
+                        dataPoints: filteredData.map((item) => {
+                            return {
+                                label: convertUnixTimestamp(item.dateTime),
+                                y: item.airTemperature
+                            }
+                        })
+                    }
+                ]
+            });
+            airTemperatureChart.render();
+
+            var airHumidityChart = new CanvasJS.Chart("airHumidityChart", {
+                title: {
+                    text: "Air Humidity"
+                },
+                data: [
+                    {
+                        type: "line",
+                        dataPoints: filteredData.map((item) => {
+                            return {
+                                label: convertUnixTimestamp(item.dateTime),
+                                y: item.airHumidity
+                            }
+                        })
+                    }
+                ]
+            });
+            airHumidityChart.render();
+
+            var soilHumidityChart = new CanvasJS.Chart("soilHumidityChart", {
+                title: {
+                    text: "Soil Moisture"
+                },
+                data: [
+
+                    {
+                        type: "line",
+                        dataPoints: filteredData.map((item) => {
+                            return {
+                                label: convertUnixTimestamp(item.dateTime),
+                                y: item.soilHumidity
+                            }
+                        })
+                    }
+                ]
+            });
+            soilHumidityChart.render();
+
+
+            var battery = new CanvasJS.Chart("battery", {
+                title: {
+                    text: "Battery"
+                },
+                data: [
+
+                    {
+                        type: "line",
+                        dataPoints: filteredData.map((item) => {
+                            return {
+                                label: convertUnixTimestamp(item.dateTime),
+                                y: item.battery
+                            }
+                        })
+                    }
+                ]
+            });
+            battery.render();
+
+        }
+
+        const renderDeviceList = (data) => {
+            const myList = document.getElementById('deviceList');
+            const uniqueIds = [...new Set(data.map(item => item.id))];
+            uniqueIds.forEach(device => {
+                const button = document.createElement('button');
+                button.textContent = "Masin " + device;
+                button.onclick = () => { renderChart(data, device), activeDevice = device }
+                myList.appendChild(button);
+            });
+
+            return uniqueIds
+        }
+
+        const renderCurrent = (data, unit, field) => {
+            const currentAirTemperature = document.getElementById(field);
+            currentAirTemperature.textContent = data + unit;
+        }
+
+
+        const handleCurrentData = async () => {
+            const data = await getCurrentData()
+            const filteredData = data.filter(item => item.id === activeDevice)
+            if (filteredData[0]) {
+                const element = document.getElementById('cards');
+                element.style.display = 'flex';
+                renderCurrent(filteredData[0].airTemperature, '°C', 'currentAirTemperature')
+                renderCurrent(filteredData[0].airHumidity, '%', 'currentAirHumidity')
+                renderCurrent(filteredData[0].soilHumidity, '%', 'currentSoilHumidity')
+                renderCurrent(filteredData[0].battery, 'v', 'currentBattery')
+            }
+        }
+
+        const handleScheduleData = async () => {
+            const element = document.getElementById('cards-scedule');
+            element.style.display = 'flex';
+            renderCurrent(filteredData[0].auto, '', 'currentAirTemperature')
+            renderCurrent(filteredData[0].manual, '', 'currentAirHumidity')
+        }
+
+
+        const reRenderChart = async (startTime, endTime, deviceId) => {
+            console.log('reRenderChart', startTime, endTime, deviceId)
+            const data = await getData(startTime, endTime)
+            renderChart(data, deviceId)
+        }
+
+        window.onload = async () => {
+            // get Last 24 hours data on page load
+            const data = await getData(twentyFourHoursAgoTimestamp, todayTimestamp)
+
+            // render device list
+            const ids = renderDeviceList(data)
+
+            // render first device charts
+            if (ids.length > 0) {
+                renderChart(data, ids[0])
+                activeDevice = ids[0]
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const formThreshold = document.getElementById('formThreshold');
+            const formSchedule = document.getElementById('formSchedule');
+
+            formSchedule.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const formData = {}; 
+                formData['time'] = document.getElementById('time').value; 
+                formData['length'] = document.getElementById('length').value; 
+
+                fetch(HOST + 'set_irrigation_schedule', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json', 
+                    },
+                    body: JSON.stringify(formData), 
+                })
+                 
+                    .then(() => {
+                        console.log(formData)
+                        alert('Irrigation scheduled at ' + formData['time'] + ' for ' + formData['length'] + ' minutes');
+                        window.location.reload(); 
+               
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                  
+                    });
+            });
+
+            formThreshold.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const formData = {}; 
+                formData['threshold'] = document.getElementById('threshold').value; 
+
+                fetch(HOST + 'set_irrigation_threshold', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json', 
+                    },
+                    body: JSON.stringify(formData), 
+                })
+                  
+                    .then(data => {
+                        alert('Threshold set to ' + formData['threshold'] + '%');
+                        window.location.reload(); 
+               
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                  
+                    });
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <ul id="deviceList"></ul>
+
+    <div class="current-wrapper">
+
+
+        <div class="current">
+            <h2>
+                Current Mesurements
+            </h2>
+            <button onclick="handleCurrentData()" class="border">Refresh</button>
+        </div>
+        <div id="cards" class="cards">
+            <div class="card">
+                <h3>Air Temperature</h3>
+                <p id="currentAirTemperature">39°C</p>
+            </div>
+            <div class="card">
+                <h3>Air Humidity</h3>
+                <p id="currentAirHumidity">39%</p>
+            </div>
+            <div class="card">
+                <h3>Soil Moisture</h3>
+                <p id="currentSoilHumidity">39%</p>
+            </div>
+            <div class="card">
+                <h3>Battery</h3>
+                <p id="currentBattery">39v</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="current-wrapper mt-4">
+
+
+        <div class="current">
+            <h2>
+                Irrigation Schedule
+            </h2>
+            <button onclick="handleScheduleData()" class="border">Change</button>
+        </div>
+        <div id="cards-scedule" class="cards">
+            <div class="card">
+                <h3 class="scedule-heading">Automatic Irrigation Start</h3>
+                <form id="formThreshold">
+                    <label for="level">Moisture Threshold</label>
+                    <div class="input-wrapper">
+                        <input id="threshold" required name="threshold" placeholder="50" id="level" min="0" max="100"
+                            type="number" />
+                        <span>%</span>
+                    </div>
+                    <div class="scedule-button">
+                        <input type="submit" value="Set">
+                    </div>
+                </form>
+            </div>
+            <div class="card">
+                <h3 class="scedule-heading">Manual Irrigation Start</h3>
+
+                <form id="formSchedule">
+
+                    <label for="time">Irrigation Start time</label>
+                    <input required id="time" name="time" type="time" />
+                    <label class="mt-4" for="length">Irrigation Length</label>
+                    <div class="input-wrapper">
+                        <input required name="length" id="length" min="0" max="120" type="number" />
+                        <span>min</span>
+                    </div>
+                    <div class="scedule-button">
+                        <input type="submit" value="Set">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="charts">
+        <div class="chart-wrapper">
+            <div id="airTemperatureChart" class="chart"></div>
+            <div id="airHumidityChart" class="chart"></div>
+        </div>
+        <div class="chart-wrapper">
+            <div id="soilHumidityChart" class="chart"></div>
+            <div id="battery" class="chart"></div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div>
+            <button onclick="reRenderChart(twentyFourHoursAgoTimestamp,todayTimestamp, activeDevice)">Last 24
+                hours</button>
+            <button onclick="reRenderChart(oneWeekAgoTimestamp,todayTimestamp, activeDevice)">Last 7 days</button>
+            <button onclick="reRenderChart(thirtyDaysAgoTimestamp,todayTimestamp, activeDevice)">Last 30 days</button>
+        </div>
+        <div>
+            <button>Refresh DB</button>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
