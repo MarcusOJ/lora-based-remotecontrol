@@ -132,7 +132,7 @@ if __name__ == "__main__":
     #print(set_irrigation_schedule("12:14", "15", "9:30", "10"))
     #print(sync_rtc())
     #print(get_greenhouse_sensor_data())
-    #print(get_controller_battery())
+    print(get_controller_battery())
     """
     while(True):
         ping()
